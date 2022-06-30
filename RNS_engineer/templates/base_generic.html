@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>{% block title %}РНС онлайн{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="'viewport" content="width=deevice-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+        
+
+    </head>
+    <body>
+        <div class="container_1">
+            <header class="header-container">
+                <div class="header_1">
+                    <a class='header_1_name' href="{% url 'index' %}">РНС<span class='header_1_2'>Онлайн</span></a></div>
+                <div class="header_2">
+                    <a class='header_2_name' href="{% url 'index' %}">Здесь будут соцсети</a>
+                </div>
+            </header>
+            <nav class="nav-container">
+                <div class="nav_1">
+                <div class="nav-tip">
+                    <a href="{% url 'index' %}">Главная</a>
+                </div>
+                <div class="nav-tip">
+                    <p>Расчеты</p>
+                </div>
+                <div class="nav-tip">
+                    <p>Расчеты</p>
+                </div>
+                <div class="nav-tip">
+                    <p>Войти</p>
+                </div>
+                </div>
+            </nav>
+            <div class="content_1">
+                {% block content_1 %}<p>Главная часть</p>{% endblock %}
+            </div>
+            <footer class="footer">
+                {% block footer %}<p>Подвал сайта</p>{% endblock %}
+            </footer>
+        </div>
+
+    </body>
+</html>
