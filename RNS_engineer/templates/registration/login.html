@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+{% block title %}Войти{% endblock %}
+{% block content %}
+
+<div class="row justify-content-center">
+  <div class="col-md-8 p-5">
+    <div class="card">
+      <div class="card-header">Войти на сайт</div>
+      <div class="card-body">
+        {% if form.errors %}
+        <div class="card-body-error" role="alert">
+          Имя пользователя и пароль не совпадают. Введите правильные данные.
+        </div>
+        {% endif %}
+
+        <div class="card-body-avt" role="alert">
+          Пожалуйста, авторизуйтесь.
+        </div>
+        
+        <form class='form-field-login' method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ next }}">
+          <div class="form-field_1-login">
+              <label for="{{ form.username.id_for_label }}" class="form-find-name">Имя пользователя</label>
+              <div class="form-input">
+                  {{ form.username }}
+              </div>
+          </div>
+          <br>
+          <div class="form-field_1-login">
+              <label for="{{ form.password.id_for_label }}" class="form-find-name">Пароль</label>
+              <div class="form-input">
+                  {{ form.password }}
+              </div>
+          </div>
+
+          <div class="form-button">              
+              <button type="submit" class="form-btn">
+                Войти
+              </button><br>
+              <a href="{% url 'password_reset' %}" class="btn_btn-link">
+                Забыли пароль?
+              </a>
+          </div>
+        </form>
+      </div> <!-- card body -->
+    </div> <!-- card -->
+  </div> <!-- col -->
+</div> <!-- row -->
+
+{% endblock %}

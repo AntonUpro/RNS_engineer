@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="'viewport" content="width=deevice-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
-        
+        {% block statics %}{% endblock %}
 
     </head>
     <body>
@@ -29,18 +29,29 @@
                 <div class="nav-tip">
                     <p>Расчеты</p>
                 </div>
+                {% if user.authenticated %}
                 <div class="nav-tip">
-                    <p>Войти</p>
+                    <a href="{% url 'login' %}">Войти</a>
                 </div>
+                <div class="nav-tip">
+                    <a href="{% url 'signup' %}">Регистрация</a>
+                </div>
+                {% else %}
+                <div class="nav-tip">
+                    <a href="{% url 'login' %}">Мои расчеты</a>
+                </div>
+                <div class="nav-tip">
+                    <a href="{% url 'signup' %}">Профиль</a>
+                </div>
+                {% endif %}
                 </div>
             </nav>
             <div class="content_1">
-                {% block content_1 %}<p>Главная часть</p>{% endblock %}
+                {% block content %}<p>Главная часть</p>{% endblock %}
             </div>
             <footer class="footer">
-                {% block footer %}<p>Подвал сайта</p>{% endblock %}
+                {% block footer %}Подвал сайта{% endblock %}
             </footer>
         </div>
-
     </body>
 </html>

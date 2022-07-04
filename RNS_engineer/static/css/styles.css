@@ -15,7 +15,6 @@ a:hover {
     text-decoration: underline;
 }
 .container_1 {
-    height: 100%;
     display: flex;
     flex-direction: column;
     min-width: 870px;
@@ -23,13 +22,12 @@ a:hover {
 .header-container {
     background-color: rgb(201, 231, 221);
     display: flex;
-    height: 100px;
+    height: 80px;
 }
 .header_1 {
-    margin-top: 50px;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    width: 50vh;
+    margin-top: 35px;
+    margin-left: 50px;
+    min-width: 300px;
     font-size: 40px;
     color: #000000;
     font-weight: 800;
@@ -42,11 +40,11 @@ a:hover {
 }
 
 .header_2 {
-    margin-top: 50px;
-    margin-left: 5vh;
-    margin-right: 5vh;
+    margin-top: 35px;
+    margin-right: 50px;
     text-align: right;
-    width: 50vh;
+    margin-left: auto;
+    margin-right: 50px;
     font-size: 40px;
     color: #000000;
     font-weight: 500;
@@ -60,12 +58,11 @@ a:hover {
     justify-content: center;
     vertical-align: middle;
     height: 65px;
-    background-color: #00043c;
+    background-color:  rgba(4, 44, 78, 0.7);
 }
 .nav_1 {
     display: flex;
-    width: 60vh;
-    min-width: 500px;
+    min-width: 600px;
 }
 .nav-tip {
     width: 200px;
@@ -81,15 +78,116 @@ a:hover {
 .nav-tip a:visited { color: rgb(207, 228, 247);}
 
 .content_1 {
-    flex: 1 0 auto;
+
+    min-height: calc(100vh - 180px);
 }
 .footer {
-    flex-direction: column;
-    margin-top: auto;
     flex: 0 0 auto;
-    background-color: blue;
+    background-color: rgb(179, 179, 218);
+    height: 35px;
+    border: 2px solid rgb(74, 74, 82);;
 }
-img {
-    height: 100px;
-    width: 100px;
+/* signup */
+
+.card {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    font-family: "Poppins", Arial, sans-serif;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #c9c9c9;
+    border-width: 1px;
+    height: auto;
+}
+.card-header {
+    background-color: #f8f8f8;
+    text-align: center;
+    font-size: large;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c9c9c9;
+    line-height: 40px;
+}
+.card-body {
+    margin-top: 25px;
+    justify-content: center;
+}
+.card-body-error {
+    text-align: center;
+    color: red;
+
+}
+.form-signup {
+    width: 780px;
+    text-align: center;
+}
+
+.form-field {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    text-align: left;
+}
+
+.form-find-name {
+    line-height: 50px;
+    padding-right: 40px;
+    text-align: end;
+}
+.form-field_1 {
+    line-height: 50px;
+    display: grid;
+}
+
+.form-input input {
+    width: 250px;
+    height: 27px;
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    padding-left: 5px;
+}
+.field-help-text {
+    line-height: 20px;
+    width: 300px;
+}
+.field-help-text li {
+    margin-left: 20px;
+}
+
+.form-button {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-button button {
+    margin-top: 25px;
+    height: 27px;
+    width: 200px;
+    color: white;
+    background-color: rgba(43, 82, 255, 0.9);
+    border: 1px solid rgba(27, 45, 126, 0.7);
+    border-radius: 5px;
+}
+.form-button button:hover {
+    transition: all 0.5s;
+    background-color: #111ba5;
+}
+
+.form-field-login {
+    display: grid;
+    text-align: left;
+}
+
+.form-field_1-login {
+    line-height: 50px;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+}
+.card-body-avt {
+    text-align: center;
+}
+.home-page {
+    min-height: calc(100vh - 180px);
+    background: url(../images/met_kon.jpg) 50% 0/100% no-repeat;
+
 }

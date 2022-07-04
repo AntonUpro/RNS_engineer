@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django import views
 from django.contrib import admin
-from django.urls import path
-from calc import views
+from django.urls import path, include
+from calc import views as cviews
+from Users import views
+from django.contrib.auth import urls
 
 
 urlpatterns = [
-    path('12', views.index, name='index'),
+    path('', cviews.index, name='index'),
+    path('signup/', views.SignUp.as_view(), name='signup'),
+    path('flange_bolts/', cviews.Сalculation_of_flange_bolts_add, name='flange_bolts'),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns+=urls.urlpatterns

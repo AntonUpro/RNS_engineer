@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+{% block title %}Зарегистрироваться{% endblock %}
+{% block content %}
+
+<div class="registr">
+  <div class="card">
+    <div class="card-header">
+      Регистрация нового пользователя
+    </div>
+    <div class="card-body">
+
+      <form class='form-signup' method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form-field">
+          <label class="form-find-name" for='{{ field.id_for_label }}' class="form-field-lable">
+            {{ field.label }}{% if field.field.required %}
+            <span class="required">*</span>{% endif %}</label>
+          <div class="form-field_1">
+            <div class="form-input">{{ field }}</div>
+            {% if field.help_text %}
+            <small class="field-help-text">{{ field.help_text|safe }}</small>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+        <div class="form-button">
+          <button type="submit" class="form-btn">Зарегистрироваться</button>
+        </div>
+        {% for error in form.errors %}
+      <div class="card-body-error">
+        {{ error }}
+      </div>
+      {% endfor %}
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

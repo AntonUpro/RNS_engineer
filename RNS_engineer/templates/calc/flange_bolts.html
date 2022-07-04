@@ -1,0 +1,96 @@
+{% extends "base_generic.html" %}
+{% block title %}Расчет фланца{% endblock %}
+{% load static %}
+{% block statics %}<link rel="stylesheet" href="{% static 'css/calc/styles_calc.css' %}" type="text/css">{% endblock %}
+{% block content %}
+<div class="flange-calc">
+    <form method="post" class="flange-calc-form">
+        {% csrf_token %}
+        <div class="flange-calc-2">
+            <label class="calc-form-label-flange">{{ form.name.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.name }}</div>
+                {% if form.name.help_text %}
+                <small class="calc-form-help-text">{{ form.name.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.foundation_bolts.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.foundation_bolts }}</div>
+                {% if form.foundation_bolts.help_text %}
+                <small class="calc-form-help-text">{{ form.foundation_bolts.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.on_bolt.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.on_bolt }}</div>
+                {% if form.on_bolt.help_text %}
+                <small class="calc-form-help-text">{{ form.on_bolt.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.count_bolts.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.count_bolts }}</div>
+                {% if form.count_bolts.help_text %}
+                <small class="calc-form-help-text">{{ form.count_bolts.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.bolt_strength_class.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.bolt_strength_class }}</div>
+                {% if form.bolt_strength_class.help_text %}
+                <small class="calc-form-help-text">{{ form.bolt_strength_class.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.diametr_bolta.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.diametr_bolta }}</div>
+                {% if form.diametr_bolta.help_text %}
+                <small class="calc-form-help-text">{{ form.diametr_bolta.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.circle_diameter.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.circle_diameter }}</div>
+                {% if form.circle_diameter.help_text %}
+                <small class="calc-form-help-text">{{ form.circle_diameter.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.stress_N.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.stress_N }}</div>
+                {% if form.stress_N.help_text %}
+                <small class="calc-form-help-text">{{ form.stress_N.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.stress_M.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.stress_M }}</div>
+                {% if form.stress_M.help_text %}
+                <small class="calc-form-help-text">{{ form.stress_M.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            <label class="calc-form-label-flange">{{ form.index_dinamic.label_tag }}</label>
+            <div class="calc-form-inp">
+                <div class="form-input">{{ form.index_dinamic }}</div>
+                {% if form.index_dinamic.help_text %}
+                <small class="calc-form-help-text">{{ form.index_dinamic.help_text|safe }}</small>
+                {% endif %}
+            </div>
+        </div>    
+            <div class="form-button">
+                <button type="submit" class="form-btn">Расчитать</button>
+            </div>
+            <div class="calc-form-inp">Коэффициент использования: {{ result_calc }} </div>
+        
+    </form>
+</div>
+    
+    
+    
+    
+    
+    
+
+
+    {% endblock %}
